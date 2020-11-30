@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rlBackground"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvCaption"
+        android:text="Decide"
+        android:textColor="@color/tvColor"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/tvSize"
+        android:layout_width="wrap_content"
+        android:layout_above="@+id/ivCoin"
+        android:layout_margin="@dimen/tv_margin"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/ivCoin"
+        android:layout_width="@dimen/ivCoinWidth"
+        android:layout_height="@dimen/ivCoinHeight"
+        android:layout_centerInParent="true"
+        android:src="@drawable/heads"
+        />
+
+</RelativeLayout>

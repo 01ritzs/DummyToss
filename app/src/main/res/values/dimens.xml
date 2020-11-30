@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tv_margin">50dp</dimen>
+    <dimen name="tvSize">50sp</dimen>
+    <dimen name="ivCoinWidth">200dp</dimen>
+    <dimen name="ivCoinHeight">200dp</dimen>
+</resources>
