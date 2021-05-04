@@ -3,45 +3,66 @@ package com.dd.dummytoss
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.google.android.gms.ads.InterstitialAd
-import android.graphics.drawable.Animatable
 import android.graphics.drawable.AnimationDrawable
-import android.graphics.drawable.DrawableContainer
+import android.util.Log
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainScreen : AppCompatActivity() {
 
-//    private lateinit var mInterstitialAd: InterstitialAd
+    private var mInterstitialAd: InterstitialAd? = null
+    private lateinit var mAdView: AdView
+    private final var TAG = "MainScreen"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        MobileAds.initialize(this) {}
+        mAdView = findViewById(R.id.adBanner)
+        adBannerLoading()
+        adInterstitialLoading()
+
         val animDrawable = rlBackground.background as AnimationDrawable
         animDrawable.setEnterFadeDuration(4000)
         animDrawable.setExitFadeDuration(2000)
         animDrawable.start()
-//        adLoading()
         onCoinToss()
     }
 
-//    private fun adLoading() {
-//        mInterstitialAd = InterstitialAd(this)
-//        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
-//        mInterstitialAd.loadAd(AdRequest.Builder().build())
-//
-//    }
+    private fun adBannerLoading() {
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+    }
 
-//    private fun adUtils() {
-//        if (mInterstitialAd.isLoaded) {
-//            mInterstitialAd.show()
-//        } else {
-//            onCoinToss()
-//        }
-//    }
+    private fun adInterstitialLoading() {
+        var adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(this, "ca-app-pub-3949256999942544/1033173712", adRequest, object :
+            InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(p0: LoadAdError) {
+                Log.d(TAG, p0?.message)
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(p0: InterstitialAd) {
+                Log.d(TAG, "Ad was Loaded.")
+                mInterstitialAd = p0
+            }
+        })
+    }
 
     private fun onCoinToss() {
         ivCoin.setOnClickListener {
-//            adUtils()
+            if (mInterstitialAd != null) {
+                mInterstitialAd?.show(this)
+            } else {
+                Log.d(TAG, "The interstitial ad wasn't ready yet.")
+            }
             val randomNumber = (1..2).random()
 
             if (randomNumber == 1) {
@@ -63,4 +84,15 @@ class MainScreen : AppCompatActivity() {
             ivCoin.isClickable = true
         }.start()
     }
+
 }
+
+//    private fun adUtils() {
+//        if (mInterstitialAd.isLoaded) {
+//            mInterstitialAd.show()
+//        } else {
+//            onCoinToss()
+//        }
+//    }
+
+
