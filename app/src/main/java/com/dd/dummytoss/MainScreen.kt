@@ -58,7 +58,7 @@ class MainScreen : AppCompatActivity() {
     private fun flipTheCoin(imageId: Int, coinSide: String) {
         ivCoin.animate().apply {
             duration = 1000
-            rotationBy(1800f)
+            rotationYBy(1800f)
             ivCoin.isClickable = false
         }.withEndAction {
             ivCoin.setImageResource(imageId)
