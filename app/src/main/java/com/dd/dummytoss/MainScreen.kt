@@ -47,6 +47,7 @@ class MainScreen : AppCompatActivity() {
         ivCoin.setOnClickListener {
             AdsUtils.getInstance()?.showInterstitialAd(this)
             val randomNumber = (1..2).random()
+
             if (randomNumber == 1) {
                 flipTheCoin(R.drawable.ic_head, "Heads")
             } else {
