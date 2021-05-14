@@ -1,38 +1,29 @@
 package com.dd.dummytoss
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import android.graphics.drawable.AnimationDrawable
-import android.util.Log
 import com.google.android.gms.ads.*
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 
 class MainScreen : AppCompatActivity() {
 
-//    private val primaryLocale: Locale = this.resources.configuration.locales[0]
-//    private val locale: String = primaryLocale.displayName
-    private var mInterstitialAd: InterstitialAd? = null
     private lateinit var mAdView: AdView
     private final var TAG = "MainScreen"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        AdsUtils.getInstance()?.loadInterstitial(this)
         mAdView = findViewById(R.id.adBanner)
-        AdsUtils.getInstance()?.initMobileAds(this)
         adBannerLoading()
 
         val animDrawable = rlBackground.background as AnimationDrawable
         animDrawable.setEnterFadeDuration(4000)
         animDrawable.setExitFadeDuration(2000)
         animDrawable.start()
-        onCoinToss()
+        init()
     }
 
     private fun adBannerLoading() {
@@ -46,8 +37,7 @@ class MainScreen : AppCompatActivity() {
     }
 
 
-
-    private fun onCoinToss() {
+    private fun init() {
         ivCoin.setOnClickListener {
             AdsUtils.getInstance()?.showInterstitialAd(this)
             val randomNumber = (1..2).random()
