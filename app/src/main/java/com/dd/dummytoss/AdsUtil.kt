@@ -2,9 +2,7 @@ package com.dd.dummytoss
 
 import android.app.Activity
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.initialization.InitializationStatus
@@ -21,11 +19,6 @@ class AdsUtils private constructor() {
         }
     }
 
-    /**
-     * Function to load interstitial ad
-     *
-     * @param context Context
-     */
     fun loadInterstitial(context: Context) {
         if (isMobileAddInitialized) {
             val adInterstitialId = context.resources.getString(R.string.interstitial_id)

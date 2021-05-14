@@ -1,24 +1,15 @@
 package com.dd.dummytoss
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import android.graphics.drawable.AnimationDrawable
-import android.util.Log
 import com.google.android.gms.ads.*
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 
 class MainScreen : AppCompatActivity() {
 
-//    private val primaryLocale: Locale = this.resources.configuration.locales[0]
-//    private val locale: String = primaryLocale.displayName
-    private var mInterstitialAd: InterstitialAd? = null
     private lateinit var mAdView: AdView
-    private final var TAG = "MainScreen"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +35,6 @@ class MainScreen : AppCompatActivity() {
         super.onResume()
         AdsUtils.getInstance()?.loadInterstitial(this)
     }
-
 
 
     private fun onCoinToss() {
