@@ -31,15 +31,8 @@ class MainScreen : AppCompatActivity() {
         mAdView.loadAd(adRequest)
     }
 
-    override fun onResume() {
-        super.onResume()
-        AdsUtils.getInstance()?.loadInterstitial(this)
-    }
-
-
     private fun onCoinToss() {
         ivCoin.setOnClickListener {
-            AdsUtils.getInstance()?.showInterstitialAd(this)
             val randomNumber = (1..2).random()
 
             if (randomNumber == 1) {
