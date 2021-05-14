@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">DummyToss</string>
-    <string name="interstitial_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="app_name" translatable="false">Toss Dummy</string>
+    <string name="interstitial_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+
+    <string name="text_tails">Tails</string>
+    <string name="text_heads">Heads</string>
+    <string name="text_decide">Choose your pick</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.dd.dummytoss
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -9,9 +10,12 @@ import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainScreen : AppCompatActivity() {
 
+//    private val primaryLocale: Locale = this.resources.configuration.locales[0]
+//    private val locale: String = primaryLocale.displayName
     private var mInterstitialAd: InterstitialAd? = null
     private lateinit var mAdView: AdView
     private final var TAG = "MainScreen"
@@ -49,9 +53,9 @@ class MainScreen : AppCompatActivity() {
             val randomNumber = (1..2).random()
 
             if (randomNumber == 1) {
-                flipTheCoin(R.drawable.ic_head, "Heads")
+                flipTheCoin(R.raw.ic_head, getString(R.string.text_heads))
             } else {
-                flipTheCoin(R.drawable.ic_tail, "Tails")
+                flipTheCoin(R.raw.ic_tail, getString(R.string.text_tails))
             }
         }
     }
