@@ -4,5 +4,7 @@
 
     <string name="text_tails">Tails</string>
     <string name="text_heads">Heads</string>
-    <string name="text_decide">Choose your pick</string>
+    <string name="text_decide">Decide?</string>
+    <string name="logo" translatable="false">Logo</string>
+    <string name="decision" translatable="false">Decision</string>
 </resources>

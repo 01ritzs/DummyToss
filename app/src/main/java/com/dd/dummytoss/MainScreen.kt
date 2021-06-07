@@ -50,6 +50,7 @@ class MainScreen : AppCompatActivity() {
             ivCoin.isClickable = false
         }.withEndAction {
             ivCoin.setImageResource(imageId)
+
             Toast.makeText(this, coinSide, Toast.LENGTH_SHORT).show()
             ivCoin.isClickable = true
         }.start()

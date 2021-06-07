@@ -4,4 +4,5 @@
     <dimen name="tvSize">50sp</dimen>
     <dimen name="ivCoinWidth">200dp</dimen>
     <dimen name="ivCoinHeight">200dp</dimen>
+    <dimen name="text_xx_large">24sp</dimen>
 </resources>
