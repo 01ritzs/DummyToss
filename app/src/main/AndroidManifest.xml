@@ -12,8 +12,8 @@
         android:theme="@style/AppTheme">
         <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
+            android:name="ca-app-pub-8973132844420915~7359775802"
+            android:value="ca-app-pub-8973132844420915/6761102208" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
