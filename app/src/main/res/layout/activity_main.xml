@@ -24,6 +24,7 @@
         android:layout_width="@dimen/ivCoinWidth"
         android:layout_height="@dimen/ivCoinHeight"
         android:layout_centerInParent="true"
+        android:contentDescription="@string/iv_coin"
         android:src="@raw/ic_head" />
 
     <TextView
@@ -45,5 +46,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-8973132844420915/6761102208" />
+        ads:adUnitId="@string/banner_ad_sample_unit_id" />
 </RelativeLayout>
