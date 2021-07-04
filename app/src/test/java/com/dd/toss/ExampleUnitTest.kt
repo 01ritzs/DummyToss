@@ -1,4 +1,4 @@
-package com.dd.dummytoss
+package com.dd.toss
 
 import org.junit.Test
 

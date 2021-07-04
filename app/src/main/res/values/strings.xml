@@ -1,8 +1,13 @@
 <resources>
-    <string name="app_name" translatable="false">Toss Dummy</string>
-    <string name="interstitial_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
-
+    <string name="app_name" translatable="false">Toss</string>
     <string name="text_tails">Tails</string>
     <string name="text_heads">Heads</string>
-    <string name="text_decide">Choose your pick</string>
+    <string name="text_decide">Decide?</string>
+    <string name="logo" translatable="false">Logo</string>
+    <string name="decision" translatable="false">Decision</string>
+    <string name="banner_ad_unit_id">ca-app-pub-8973132844420915/6761102208</string>
+    <string name="banner_app_id">ca-app-pub-8973132844420915~7359775802</string>
+    <string name="banner_ad_sample_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="iv_coin">Image of the coin</string>
+
 </resources>

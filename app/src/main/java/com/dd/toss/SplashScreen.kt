@@ -1,4 +1,4 @@
-package com.dd.dummytoss
+package com.dd.toss
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
-class SplashScreen : AppCompatActivity() {
+public class SplashScreen : AppCompatActivity() {
 
     private lateinit var ivSplashScreen: ImageView
 

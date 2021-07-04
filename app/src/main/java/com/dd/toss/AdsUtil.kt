@@ -1,15 +1,13 @@
-package com.dd.dummytoss
+package com.dd.toss
 
 import android.content.Context
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.initialization.InitializationStatus
 
-class AdsUtils private constructor() {
+public class AdsUtils private constructor() {
 
     fun initMobileAds(context: Context?) {
-        MobileAds.initialize(context) { initializationStatus: InitializationStatus? ->
-            isMobileAddInitialized = true
-        }
+        MobileAds.initialize(context) { initializationStatus: InitializationStatus? -> isMobileAddInitialized = true }
     }
 
     companion object {

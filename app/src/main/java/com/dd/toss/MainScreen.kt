@@ -1,20 +1,26 @@
-package com.dd.dummytoss
+package com.dd.toss
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import android.graphics.drawable.AnimationDrawable
+import android.widget.ImageView
+import android.widget.RelativeLayout
 import com.google.android.gms.ads.*
-import kotlinx.android.synthetic.main.activity_main.*
 
-class MainScreen : AppCompatActivity() {
+public class MainScreen : AppCompatActivity() {
 
     private lateinit var mAdView: AdView
+    private lateinit var rlBackground: RelativeLayout
+    private lateinit var ivCoin: ImageView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override
+    fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        rlBackground = findViewById(R.id.rlBackground)
+        ivCoin = findViewById(R.id.ivCoin)
         mAdView = findViewById(R.id.adBanner)
         AdsUtils.getInstance()?.initMobileAds(this)
         adBannerLoading()
@@ -50,6 +56,7 @@ class MainScreen : AppCompatActivity() {
             ivCoin.isClickable = false
         }.withEndAction {
             ivCoin.setImageResource(imageId)
+
             Toast.makeText(this, coinSide, Toast.LENGTH_SHORT).show()
             ivCoin.isClickable = true
         }.start()
